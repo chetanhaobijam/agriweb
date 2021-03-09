@@ -23,26 +23,26 @@
 
 /* Webfont: LeikoiMayekAU */@font-face {
   font-family: 'LeikoiMayekAU';
-  src: url('/fonts/LeikoiMayek AU.eot'); /* IE9 Compat Modes */
-  src: url('/fonts/LeikoiMayek AU.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/fonts/LeikoiMayek AU.woff') format('woff'), /* Modern Browsers */
-       url('/fonts/LeikoiMayek AU.woff2') format('woff2'), /* Modern Browsers */
-       url('/fonts/LeikoiMayek AU.ttf') format('truetype'); /* Safari, Android, iOS */
-  font-style: normal;
-  font-weight: normal;
-  text-rendering: optimizeLegibility;
+    src: url('/fonts/LeikoiMayekAU.eot'); /* IE9 Compat Modes */
+    src: url('/fonts/LeikoiMayekAU.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('/fonts/LeikoiMayekAU.woff') format('woff'), /* Modern Browsers */
+         url('/fonts/LeikoiMayekAU.woff2') format('woff2'), /* Modern Browsers */
+         url('/fonts/LeikoiMayekAU.ttf') format('truetype'); /* Safari, Android, iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
 }
 
-/* Webfont: LeikoiMayekAkhuba ANU */@font-face {
-  font-family: 'LeikoiMayekAkhubaANU';
-  src: url('/fonts/LeikoiMayekAkhuba ANU.eot'); /* IE9 Compat Modes */
-  src: url('/fonts/LeikoiMayekAkhuba ANU.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/fonts/LeikoiMayekAkhuba_ANU.woff') format('woff'), /* Modern Browsers */
-       url('/fonts/LeikoiMayekAkhuba_ANU.woff2') format('woff2'), /* Modern Browsers */
-       url('/fonts/LeikoiMayekAkhuba ANU.ttf') format('truetype'); /* Safari, Android, iOS */
-  font-style: normal;
-  font-weight: normal;
-  text-rendering: optimizeLegibility;
+/* Webfont: LeikoiMayekAkhubaANU */@font-face {
+  font-family: 'LeikoiMayekANU';
+    src: url('/fonts/LeikoiMayekANU.eot'); /* IE9 Compat Modes */
+    src: url('/fonts/LeikoiMayekANU.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('/fonts/LeikoiMayekANU.woff') format('woff'), /* Modern Browsers */
+         url('/fonts/LeikoiMayekANU.woff2') format('woff2'), /* Modern Browsers */
+         url('/fonts/LeikoiMayekANU.ttf') format('truetype'); /* Safari, Android, iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
 }
 
 :root {
@@ -58,7 +58,7 @@
 }
 
 body {
-  font-family: 'LeikoiMayekAkhubaANU', sans-serif;
+  font-family: 'LeikoiMayekANU', sans-serif;
   background-color: var(--agriGreen);
 }
 
@@ -145,9 +145,35 @@ main {
 
 .mainGrid {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: auto;
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas: 
+    "secondGrid"
+    "firstGrid"
+    "thirdGrid";
   background-color: #fff;
+}
+
+.firstGrid {
+  grid-area: firstGrid;
+}
+
+.secondGrid {
+  grid-area: secondGrid;
+}
+
+.thirdGrid {
+  grid-area: thirdGrid;
+}
+
+@media screen and (min-width: 768px) {
+  .mainGrid {
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: 
+      "secondGrid secondGrid"
+      "firstGrid thirdGrid";
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -155,6 +181,8 @@ main {
     grid-template-columns: 27% auto 27%;
     grid-template-rows: 1fr;
     grid-column-gap: 0.5rem;
+    grid-template-areas:
+    "firstGrid secondGrid thirdGrid";
   }
 }
 
@@ -165,7 +193,13 @@ main {
 
 .gallery img {
   width: 100%;
-  height: 20rem;
+  height: 13rem;
+}
+
+@media screen and (min-width: 576px) {
+  .gallery img {
+    height: 20rem;
+  }
 }
 
 .slide {
@@ -193,7 +227,13 @@ main {
   font-size: 1.4rem;
   border: 1px solid rgb(205, 229, 239);
   background-color: rgb(236, 249, 255);
-  margin: 1rem 0.5rem;
+  margin: 0.5rem;
+}
+
+@media screen and (min-width: 576px) {
+  .leader {
+    margin: 1rem 0.5rem;
+  }
 }
 
 .leaderPhoto {
@@ -229,6 +269,13 @@ main {
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
   padding: 0.5rem;
   background-color: var(--textGray);
+  margin: 0 0.5rem;
+}
+
+@media screen and (min-width: 576px) {
+  .birth {
+    margin: auto;
+  }
 }
 
 h1, .articleTitle {
@@ -272,10 +319,16 @@ h1, .articleTitle {
 
 .article {
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
-  margin: 1rem;
+  margin: 1rem 0.5rem;
   padding: 0.5rem;
   background-color: var(--textGray);
   color: #0000CD;
+}
+
+@media screen and (min-width: 567px) {
+  .article {
+    margin: 1rem;
+  }
 }
 
 .articleList ul {
@@ -334,16 +387,32 @@ h1, .articleTitle {
 
 .subGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 1rem;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(2, auto);
 }
 
+@media screen and (min-width:768px) {
+  .subGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    column-gap: 1rem;
+  }
+}
 .tender, .download {
-  margin: 1rem 0;
+  margin: 1rem 0.5rem;
 }
 
 .download {
-  height: 39rem;
+  height: 32.5rem;
+}
+
+@media screen and (min-width: 576px) {
+  .tender, .download {
+    margin: 1rem 0;
+  }
+  .download {
+    height: 39rem;
+  }
 }
 
 footer {
@@ -358,6 +427,7 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  text-align: center;
 }
 
 .policies div {
@@ -365,6 +435,25 @@ footer {
   cursor: pointer;
 }
 
-@media screen and (min-width: 567px) {
+.policies div:first-child {
+  border-right: 1px solid #fff;
+  margin-right: 0.5rem;
+}
 
+.policies div:last-child {
+  border-left: 1px solid #fff;
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+@media screen and (min-width: 576px) {
+  .policies div:first-child {
+    border: none;
+    margin: auto;
+  }
+  .policies div:last-child {
+    border: none;
+    margin: auto;
+    padding: auto;
+  }
 }
