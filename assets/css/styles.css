@@ -206,11 +206,17 @@ main {
   position: absolute;
   top: 40%;
   left: 5%;
-  font-size: 3rem;
+  font-size: 2rem;
   color: #fff;
   opacity: 0.2;
   transition: all 0.5s ease;
   cursor: pointer;
+}
+
+@media screen and (min-width: 576px) {
+  .slide {
+    font-size: 3rem;
+  }
 }
 
 .slide:hover {
