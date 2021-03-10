@@ -1,0 +1,61 @@
+body {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1rem;
+}
+
+.navbar {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.form-control {
+  font-size: 0.9rem;
+}
+
+.leader, .leaderName {
+  font-size: 1rem;
+}
+
+h1, .articleTitle {
+  font-size: 1.3rem;
+}
+
+.birthText, .articleList, .articleText {
+  font-size: 1rem;
+}
+
+.btn {
+  font-size: 1rem;
+}
+
+.latestText, .latestText div:last-child {
+  font-size: 1.1rem;
+}
+
+@keyframes slideNews {
+  0% {
+    top: 1%;
+  }
+
+  50% {
+    top: 60%;
+  }
+
+  100% {
+    top: 1%;
+  }
+}
+
+footer {
+  font-size: 1rem;
+}
+
+.copyright {
+  font-size: 1rem;
+}
+
+@media screen and (min-width: 576px) {
+  .copyright {
+    font-size: 1rem;
+  }
+}

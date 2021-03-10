@@ -3,10 +3,10 @@ const rightSlide = document.querySelector(".rightSlide");
 const galleryImg = document.querySelector(".gallery img");
 
 const banners = [
-  "../images/banner1.gif",
-  "../images/banner2.jpg",
-  "../images/banner3.gif",
-  "../images/banner0.jpg"
+  "assets/images/banner1.gif",
+  "assets/images/banner2.jpg",
+  "assets/images/banner3.gif",
+  "assets/images/banner0.jpg"
 ]
 
 const changeImgLeft = () => {

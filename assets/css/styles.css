@@ -225,6 +225,7 @@ h1, .articleTitle {
 
 .birthText, .articleList, .articleText {
   font-size: 1.3rem;
+  margin-top: 0.5rem;
 }
 
 .birthText {
@@ -289,7 +290,7 @@ h1, .articleTitle {
   }
 
   50% {
-    top: 50%;
+    top: 49%;
   }
 
   100% {
@@ -334,6 +335,7 @@ footer {
   margin: 1rem;
   padding: 2rem;
   font-size: 1.3rem;
+  color:#02038A;
 }
 
 .copyright {
