@@ -106,12 +106,17 @@ main {
 .form-control {
   margin-left: 0.5rem;
   width: 90%;
+  position: relative;
+  border-radius: 2rem;
+  padding-left: 1rem;
+  padding-right: 2rem;
 }
 
-@media screen and (min-width: 1280px) {
-  .navbar {
-    font-size: 1.4rem;
-  }
+.searchIcon {
+  position: absolute;
+  right: 12%;
+  color: var(--agriSaffron);
+  cursor: pointer;
 }
 
 .mainGrid {
@@ -379,6 +384,9 @@ footer {
   .form-inline .form-control {
     width: 60%;
   }
+  .searchIcon {
+    right: 41%;
+  }
   .slide {
     font-size: 3rem;
   }
@@ -436,6 +444,9 @@ footer {
   .form-inline .form-control {
     width: auto;
   }
+  .searchIcon {
+    right: 2%;
+  }
   .navbar {
     padding: 0 0.5rem 0 0;
     font-size: 1.1rem;
@@ -475,5 +486,11 @@ footer {
   }
   .navbar {
     font-size: 1.2rem;
+  }
+}
+/* Styles for screen size greater than 1280px */
+@media screen and (min-width: 1280px) {
+  .navbar {
+    font-size: 1.4rem;
   }
 }
