@@ -79,6 +79,25 @@ main {
   width: 100%;
 }
 
+.language {
+  position: absolute;
+  top: 12%;
+  right: 5.5%;
+  display: none;
+  background-color: var(--purple);
+  border-color: var(--purple);
+  color: #fff;
+}
+
+.language:hover {
+  color: #fff;
+}
+
+.manipuri {
+  font-family: 'LeikoiMayekAU';
+  font-size: 1.4rem;
+}
+
 .navbar {
   background-color: #eeaa69;
   font-size: 1.4rem;
@@ -92,8 +111,12 @@ main {
   margin-left: 1rem;
 }
 
-.fa-home {
+.fa-home, .languageNavbar .fa-font {
   padding-right: 0.3rem;
+}
+
+.language .fa-font {
+  font-size: 1.2rem;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -105,6 +128,10 @@ main {
   background-color: var(--dark);
   color: #fff;
   text-decoration: underline;
+}
+
+.languageNavbar {
+  display: inline-block;
 }
 
 .form-control {
@@ -445,6 +472,13 @@ footer {
   .headerBackground img {
     width: auto;
   }
+  .language {
+    display: block;
+    right: 0.5%;
+  }  
+  .languageNavbar {
+    display: none;
+  }
   .form-inline .form-control {
     width: auto;
   }
@@ -487,6 +521,9 @@ footer {
 @media screen and (min-width: 1200px) {
   main {
     width: 90%;
+  }
+  .language {
+    right: 5.5%
   }
   .navbar {
     font-size: 1.2rem;
