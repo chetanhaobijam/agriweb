@@ -1,9 +1,0 @@
-/* Webfont: LeikoiMayek */@font-face {
-    font-family: 'LeikoiMayek';
-    src: url('LeikoiMayek.woff2') format('woff2'), /* Modern Browsers */
-         url('LeikoiMayek.otf') format('opentype'); /* Safari, Android, iOS */
-             font-style: normal;
-    font-weight: normal;
-    text-rendering: optimizeLegibility;
-}
-

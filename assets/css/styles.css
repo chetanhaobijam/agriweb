@@ -45,6 +45,30 @@
     text-rendering: optimizeLegibility;
 }
 
+/* Webfont: MahumCU */@font-face {
+  font-family: 'MahumCU';
+  src: url('../fonts/MahumCU.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/MahumCU.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/MahumCU.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/MahumCU.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/MahumCU.ttf') format('truetype'); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+/* Webfont: MahumHU */@font-face {
+  font-family: 'MahumHU';
+  src: url('../fonts/MahumHU.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/MahumHU.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/MahumHU.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/MahumHU.woff2') format('woff2'), /* Modern Browsers */
+       url('../fonts/MahumHU.ttf') format('truetype'); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
 :root {
   font-size: 1rem;
   margin: 0;
@@ -58,7 +82,7 @@
 }
 
 body {
-  font-family: 'LeikoiMayekANU', sans-serif;
+  font-family: 'MahumHU', sans-serif;
   background-color: var(--agriGreen);
 }
 
@@ -79,20 +103,6 @@ main {
   width: 100%;
 }
 
-.language {
-  position: absolute;
-  top: 12%;
-  right: 5.5%;
-  display: none;
-  background-color: var(--purple);
-  border-color: var(--purple);
-  color: #fff;
-}
-
-.language:hover {
-  color: #fff;
-}
-
 .manipuri {
   font-family: 'LeikoiMayekAU';
   font-size: 1.4rem;
@@ -103,6 +113,7 @@ main {
   font-size: 1.4rem;
   padding: 0.5rem;
   border: 1px solid #fff;
+  font-family: 'LeikoiMayekANU';
 }
 
 .navbar-brand {
@@ -111,12 +122,8 @@ main {
   margin-left: 1rem;
 }
 
-.fa-home, .languageNavbar .fa-font {
+.fa-home {
   padding-right: 0.3rem;
-}
-
-.language .fa-font {
-  font-size: 1.2rem;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -128,10 +135,6 @@ main {
   background-color: var(--dark);
   color: #fff;
   text-decoration: underline;
-}
-
-.languageNavbar {
-  display: inline-block;
 }
 
 .form-control {
@@ -260,7 +263,7 @@ h1, .articleTitle {
 }
 
 .birthText, .articleList, .articleText {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   margin-top: 0.5rem;
 }
 
@@ -472,13 +475,6 @@ footer {
   .headerBackground img {
     width: auto;
   }
-  .language {
-    display: block;
-    right: 0.5%;
-  }  
-  .languageNavbar {
-    display: none;
-  }
   .form-inline .form-control {
     width: auto;
   }
@@ -521,9 +517,6 @@ footer {
 @media screen and (min-width: 1200px) {
   main {
     width: 90%;
-  }
-  .language {
-    right: 5.5%
   }
   .navbar {
     font-size: 1.2rem;
