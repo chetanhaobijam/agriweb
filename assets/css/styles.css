@@ -117,7 +117,11 @@ main {
 
 .manipuri {
   font-family: 'LeikoiMayekAU';
-  font-size: 1.4rem;
+  font-size: 1.2rem;
+}
+
+.translate {
+  font-size: 1.1rem;
 }
 
 .navbar {
@@ -147,6 +151,11 @@ main {
   background-color: var(--dark);
   color: #fff;
   text-decoration: underline;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+  color: var(--light);
+  background-color: var(--info);
 }
 
 .form-control {
@@ -417,6 +426,16 @@ footer {
   padding-left: 0.5rem;
 }
 
+/* About Us Page Styles */
+.aboutList {
+  list-style: circle;
+  color: #0000CD;
+}
+
+.aboutList li::marker {
+  color: #000;
+}
+
 /* Styles for screen size greater than 500px */
 @media screen and (min-width: 500px) {
   .leader {
@@ -500,9 +519,8 @@ footer {
   }
   .navbar {
     padding: 0 0.5rem 0 0;
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
-  
   .navbar-brand {
     display: none;
   }
@@ -530,14 +548,11 @@ footer {
   }
 }
 
-/* About Us Page Styles */
-.aboutList {
-  list-style: circle;
-  color: #0000CD;
-}
-
-.aboutList li::marker {
-  color: #000;
+/* Styles for screen size greater than 1030px */
+@media screen and (min-width: 1040px) {
+  .navbar {
+    font-size: 1.1rem;
+  }
 }
 
 /* Styles for screen size greater than 1200px */
@@ -552,6 +567,16 @@ footer {
 /* Styles for screen size greater than 1280px */
 @media screen and (min-width: 1280px) {
   .navbar {
+    font-size: 1.3rem;
+  }
+}
+
+/* Styles for screen size greater than 1330px */
+@media screen and (min-width: 1330px) {
+  .navbar {
     font-size: 1.4rem;
+  }
+  .translate {
+    padding: 0.7rem !important;
   }
 }
