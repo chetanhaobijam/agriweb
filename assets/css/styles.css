@@ -319,7 +319,7 @@ h1, .articleTitle {
   padding-left: 1.2rem;
 }
 
-.articleList ul li:hover {
+.articleList ul li:hover, .aboutList li:hover {
   color: var(--primary);
   text-decoration: underline;
   cursor: pointer;
@@ -528,6 +528,16 @@ footer {
   .tender, .download {
     margin: 1rem 0;
   }
+}
+
+/* About Us Page Styles */
+.aboutList {
+  list-style: circle;
+  color: #0000CD;
+}
+
+.aboutList li::marker {
+  color: #000;
 }
 
 /* Styles for screen size greater than 1200px */
