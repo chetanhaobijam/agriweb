@@ -50,9 +50,10 @@ body, html {
   scroll-behavior: smooth;
 }
 
-/* Header Section */
+/* Start of Header Section */
 #header {
-  position: relative;
+  position: fixed;
+  width: 100%;
 }
 
 #headerBackground img {
@@ -103,10 +104,91 @@ body, html {
 #fontMinus {
   background-color: var(--danger);
 }
-/* Header Section */
+/* End of Header Section */
+
+/* Start of Navigation Section */
+#navbar {
+  background-color: var(--primary-saffron);
+  position: fixed;
+  top: 10em;
+  width: 30ch;
+  overflow: scroll;
+  max-height: 80vh;
+}
+
+#navbar li {
+  padding: 1rem;
+  list-style: none;
+  font-size: 1.2rem;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+#navbar li:hover {
+  background-color: var(--text-black);
+  border: 1px solid var(--text-black);
+  color: #fff;
+}
+
+#english, #meitei, #manEng, #thadou, #paite, #hmar {
+  background-color: #fefefe;
+  border: 1px solid var(--primary-saffron) !important;
+}
+
+#english:hover, #meitei:hover, #manEng:hover, #thadou:hover, #paite:hover, #hmar:hover {
+  background-color: var(--text-primary);
+  color: #fff;
+  border: 1px solid var(--text-primary) !important;
+}
+
+#english, #search {
+  border-top: none !important;
+}
+
+#navbar #search {
+  padding: 0.5rem;
+}
+
+#navbar form {
+  position: relative;
+}
+
+#navbar form input {
+  padding: 0.5rem 3rem 0.5rem 1rem;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+}
+
+#navbar form button {
+  position: absolute;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  font-size: 1.5rem;
+  top: 0.2em;
+  right: 0.5em;
+}
+
+/* Scrollbars */
+#navbar::-webkit-scrollbar {
+  width: 1px;
+}
+
+#navbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+#navbar::-webkit-scrollbar-thumb {
+  background: var(--primary-saffron);
+}
+/* End of Navigation Section */
 
 /* Media Queries for Responsive Web Layout */
 @media screen and (max-width: 992px) {
+  #header {
+    position: relative;
+  }
   #fontPlus, #fontMinus{
     display: none;
   }
@@ -129,6 +211,9 @@ body, html {
   }
   #menuIcon img {
     width: 40px;
+  }
+  #navbar {
+    top: 14em;
   }
 }
 
