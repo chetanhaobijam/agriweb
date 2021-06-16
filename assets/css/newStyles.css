@@ -72,11 +72,11 @@ body, html {
 
 #controls {
   position: absolute;
-  bottom: 0.5em;
+  top: 0.5em;
   right: 0.5em;
   width: 20ch;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   font-size: 1.2rem;
   font-weight: 700;
 }
@@ -92,6 +92,10 @@ body, html {
   background-color: var(--text-black);
 }
 
+#menuIcon {
+  display: none;
+}
+
 #fontPlus {
   background-color: var(--text-primary);
 }
@@ -101,9 +105,30 @@ body, html {
 }
 /* Header Section */
 
+/* Media Queries for Responsive Web Layout */
 @media screen and (max-width: 992px) {
-  #controls {
+  #fontPlus, #fontMinus{
     display: none;
+  }
+  #controls {
+    position: relative;
+    top: -0.2em;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    justify-content: space-between;
+  }
+  #controls div {
+    padding: 1rem;
+    border-radius: 0;
+    cursor: default;
+  }
+  #menuIcon {
+    display: block;
+    cursor: pointer !important;
+  }
+  #menuIcon img {
+    width: 40px;
   }
 }
 
@@ -116,5 +141,17 @@ body, html {
 @media screen and (max-width: 567px) {
   #headerBackground img {
     min-height: 7rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #headerBackground img {
+    min-height: 5rem;
+  }
+  #menu {
+    padding: 0.7rem 1rem;
+  }
+  #menuIcon img {
+    width: 30px;
   }
 }
