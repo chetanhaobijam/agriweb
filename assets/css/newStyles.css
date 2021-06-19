@@ -58,7 +58,7 @@ body, html {
 
 #headerBackground img {
   width: 100%;
-  min-height: 10rem;
+  height: 8rem;
 }
 
 #headerTitle {
@@ -68,7 +68,7 @@ body, html {
 }
 
 #headerTitle img {
-  width: 100%;
+  width: 80%;
 }
 
 #controls {
@@ -110,10 +110,14 @@ body, html {
 #navbar {
   background-color: var(--primary-saffron);
   position: fixed;
-  top: 10em;
+  top: 8em;
   width: 30ch;
-  overflow: scroll;
-  max-height: 80vh;
+  overflow-y: hidden;
+  max-height: 82vh;
+}
+
+#navbar:hover {
+  overflow-y: scroll;
 }
 
 #navbar li {
@@ -130,22 +134,32 @@ body, html {
   color: #fff;
 }
 
-#english, #meitei, #manEng, #thadou, #paite, #hmar {
-  background-color: #fefefe;
-  border: 1px solid var(--primary-saffron) !important;
+.language {
+  display: flex;
+  justify-content: space-between;
 }
 
-#english:hover, #meitei:hover, #manEng:hover, #thadou:hover, #paite:hover, #hmar:hover {
+.language i {
+  padding: 0.2rem;
+}
+
+.english, .meitei, .manEng, .thadou, .paite, .hmar {
+  background-color: #fefefe;
+  border: 1px solid var(--primary-saffron) !important;
+  display: none;
+}
+
+.english:hover, .meitei:hover, .manEng:hover, .thadou:hover, .paite:hover, .hmar:hover {
   background-color: var(--text-primary);
   color: #fff;
   border: 1px solid var(--text-primary) !important;
 }
 
-#english, #search {
+.english, .search {
   border-top: none !important;
 }
 
-#navbar #search {
+#navbar .search {
   padding: 0.5rem;
 }
 
@@ -172,7 +186,7 @@ body, html {
 
 /* Scrollbars */
 #navbar::-webkit-scrollbar {
-  width: 1px;
+  width: 2px;
 }
 
 #navbar::-webkit-scrollbar-track {
@@ -180,7 +194,7 @@ body, html {
 }
 
 #navbar::-webkit-scrollbar-thumb {
-  background: var(--primary-saffron);
+  background: #333;
 }
 /* End of Navigation Section */
 
@@ -213,25 +227,35 @@ body, html {
     width: 40px;
   }
   #navbar {
-    top: 14em;
+    display: none;
+    position: initial;
+    max-height: 100%;
+    width: 100%;
+  }
+  #navbar form {
+    width: 80%;
+  }
+  .search input {
+    width: 100%;
+  }
+  #navbar form button {
+    right: -2em;
   }
 }
 
 @media screen and (max-width: 768px) {
-  #headerBackground img {
-    min-height: 9rem;
-  }
+
 }
 
 @media screen and (max-width: 567px) {
   #headerBackground img {
-    min-height: 7rem;
+    height: 6rem;
   }
 }
 
 @media screen and (max-width: 400px) {
   #headerBackground img {
-    min-height: 5rem;
+    height: 5rem;
   }
   #menu {
     padding: 0.7rem 1rem;
@@ -239,4 +263,13 @@ body, html {
   #menuIcon img {
     width: 30px;
   }
+}
+
+/* Script Styles */
+.show {
+  display: block !important;
+}
+
+.hide {
+  display: none !important;
 }
