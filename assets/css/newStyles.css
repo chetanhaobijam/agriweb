@@ -12,7 +12,7 @@
   --photo-border: #ECF9FF;
   --shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
   --shadow-hover: 0px 0px 4px 5px rgba(0, 0, 0, 0.2);
-  --transition: all 1s ease;
+  --transition: all 0.5s ease;
 }
 
 /* Scrollbars */
@@ -104,10 +104,13 @@ body, html {
 
 #fontPlus {
   background-color: var(--text-primary);
+  display: none;
+  
 }
 
 #fontMinus {
   background-color: var(--danger);
+  display: none;
 }
 /* End of Header Section */
 
@@ -278,13 +281,24 @@ body, html {
   background-color: #fff;
   display: grid;
   grid-template-columns: 1fr auto;
-  grid-gap: 1rem;
+  grid-gap: 0.5rem;
+  padding-bottom: 2rem;
+}
+
+#main {
+  display: grid;
+  grid-template-areas: 
+  "officers officers"
+  "birth birth"
+  "tenders downloads"
+  "reports schemes";
 }
 
 #officers {
   display: flex;
   justify-content: space-evenly;
   padding: 2rem 0;
+  grid-area: officers;
 }
 
 #minister, #director {
@@ -294,11 +308,9 @@ body, html {
 }
 
 .officerPhoto {
-  background-color: var(--photo-blue);
-  padding: 0.2rem;
+  padding: 0.1rem;
   box-shadow: var(--shadow);
   margin-bottom: 1rem;
-  transition: var(--transition);
 }
 
 .officerPhoto:hover {
@@ -310,13 +322,124 @@ body, html {
   text-align: center;
 }
 
-.offcerDesignation {
+.officerDesignation {
   font-weight: 700;
+}
+
+.articleBody {
+  padding: 0.5rem;
+  box-shadow: var(--shadow);
+  margin: 0.5rem;
+}
+
+.articleHeader {
+  background: #56ab2f;
+  background: -webkit-linear-gradient(to left, #a8e063 20%, #56ab2f);
+  background: linear-gradient(to left, #a8e063 20%, #56ab2f);
+  padding: 0.5rem;
+  color: #fff;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+
+#birth .articleHeader {
+  margin-bottom: 1rem;
+}
+
+.articlePara {
+  padding: 0 1rem;
+  margin: auto;
+  line-height: 1.6em;
+  text-align: justify;
+  border-left: 3px solid #bbb;
+}
+
+.articleListBody {
+  /* list-style: none; */
+  list-style-image: url("/assets/images/chevron-right-10.png");
+  padding: 0 0.5rem;
+  margin: 0 0.5rem;
+  color: var(--text-blue);
+}
+
+.articleListBody li {
+  padding: 0.5rem 0;
+  cursor: pointer;
+}
+
+
+.articleListBody li:hover {
+  color: var(--text-primary);
+}
+.btnMore {
+  background: var(--danger);
+  padding: 0.7rem;
+  color: #fff;
+  outline: none;
+  border: 1px solid var(--danger);
+  margin: 1rem auto 0.5rem auto;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btnMore:hover, .btnMore:focus, .btnMore:active {
+  background: var(--danger-hover);
+  border-color: var(--danger-hover);
+}
+
+.btnMore:active {
+  box-shadow: var(--shadow);
+}
+
+#birth {
+  grid-area: birth;
+}
+
+#tenders {
+  grid-area: tenders;
+}
+
+#downloads {
+  grid-area: downloads;
+}
+
+#reports {
+  grid-area: reports;
+}
+
+#schemes {
+  grid-area: schemes;
+}
+
+#ad {
+  margin: 2rem 0.5rem;
+  box-shadow: var(--shadow);
+  padding: 0.3rem;
+}
+
+#ad img {
+  width: 100%;
+  height: auto;
+}
+
+#otherLinks div {
+  box-shadow: var(--shadow);
+  padding: 0.2rem;
+  margin: 0.3rem 0.3rem 1rem;
+}
+
+#otherLinks div img {
+  width: 100%;
+  height: auto;
+}
+
+#otherLinks div:last-child {
+  margin-bottom: 0.3rem;
 }
 /* End of Grid Body */
 
 /* Media Queries for Responsive Web Layout */
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1050px) {
   #header {
     position: relative;
   }
@@ -381,6 +504,18 @@ body, html {
   #minister {
     margin-bottom: 2rem;
   }
+  .gridBody {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #main {
+    grid-template-areas:
+    "officers officers"
+    "birth birth"
+    "tenders tenders"
+    "downloads downloads"
+    "reports reports"
+    "schemes schemes";
+  }
 }
 
 @media screen and (max-width: 567px) {
@@ -392,7 +527,10 @@ body, html {
   }
   .gridBody {
     grid-template-columns: auto;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+  }
+  #ad {
+    margin: 0rem 0.5rem;
   }
 }
 
