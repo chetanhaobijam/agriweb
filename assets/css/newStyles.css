@@ -118,10 +118,10 @@ body, html {
 #navbar {
   background-color: var(--primary-saffron);
   position: fixed;
-  top: 8em;
+  bottom: 0;
   width: 30ch;
   overflow-y: hidden;
-  max-height: 82vh;
+  max-height: 81vh;
   z-index: 2;
 }
 
@@ -438,6 +438,43 @@ body, html {
 }
 /* End of Grid Body */
 
+/* Styles of Footer */
+#footer {
+  background: url("/assets/images/footer.png") center center no-repeat;
+  background-size: cover;
+  margin-left: 17rem;
+  color: var(--footer-blue);
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+  font-size: 1.1rem;
+}
+
+#policies {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+  color: #fff;
+}
+
+#policies div {
+  margin-right: 2rem;
+  cursor: pointer;
+}
+
+#copyright {
+  line-height: 1.5rem;
+}
+
+a#author, a#author:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+a#author:hover {
+  text-decoration: underline;
+}
+/* Styles of Footer */
+
 /* Media Queries for Responsive Web Layout */
 @media screen and (max-width: 1050px) {
   #header {
@@ -495,6 +532,9 @@ body, html {
   #gallery, .gridBody {
     margin: 0 0.5rem;
   }
+  #footer {
+    margin: 0 0.5rem;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -532,6 +572,12 @@ body, html {
   #ad {
     margin: 0rem 0.5rem;
   }
+  #footer {
+    font-size: 1rem;
+  }
+  .policiesSeparator {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -547,7 +593,18 @@ body, html {
   #galleryControls {
     font-size: 2rem;
   }
-
+  #policies {
+    flex-direction: column;
+  }
+  #policies div {
+    padding-bottom: 0.5rem;
+  }
+  #terms {
+    align-self: flex-start;
+  }
+  #disclaimer {
+    align-self: flex-end;
+  }
 }
 
 /* Script Styles */
